@@ -35,7 +35,9 @@ TODO:
                 };
 
             // Add & position the canvas
-            element.style.position = 'relative';
+            if (jqe.css('position') === 'static') {
+                element.style.position = 'relative';
+            }
             element.appendChild(canvas);
             canvas.style.position = 'absolute';
             canvas.style.top = '0px';
