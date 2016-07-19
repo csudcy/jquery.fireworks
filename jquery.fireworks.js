@@ -62,11 +62,13 @@ TODO:
             var data = jqe.data('fireworks_data');
             jqe.removeData('fireworks_data');
 
-            // Stop the interval
-            clearInterval(data.interval);
+            $(data.canvas).fadeOut(5000, function(){
+                // Stop the interval
+                clearInterval(data.interval);
 
-            // Remove the canvas
-            data.canvas.remove();
+                // Remove the canvas
+                data.canvas.remove();
+            });
 
             // Reset the elements positioning
             data.element.style.position = '';
